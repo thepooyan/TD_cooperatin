@@ -1,10 +1,11 @@
 #cooperation {
-    --themeColor: #1D71B9;
     background-color: #FAF9FF;
+    --themeColor: #1D71B9;
     --backgroundDark: #F0F4FD;
     --backgroundAlt: #E7E7E7;
     --colorTitle: #383838;
-    --colorP: #787879;
+    // --colorP: #6B6B6B;
+    --colorP: #848484;
 
 
     //_____general
@@ -135,7 +136,7 @@
     >section {
         display: flex;
         gap: 5em;
-        padding: 5em 5%;
+        padding: 7em 5%;
         position: relative;
 
         .content {
@@ -181,6 +182,18 @@
                     right: 45%;
                     top: 13%;
                 }
+            }
+        }
+
+        &:nth-child(2) {
+            z-index: -2;
+
+            &::before {
+                @extend %squareDot;
+                bottom: -1em;
+                right: -0.3em;
+                font-size: 16.1em;
+                opacity: 0.4;
             }
         }
 

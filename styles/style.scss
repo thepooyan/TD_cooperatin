@@ -3,14 +3,29 @@
     background-color: #FAF9FF;
     --backgroundDark: #F0F4FD;
 
+    %squareDot {
+        content: '';
+        background: url('/Content/images/img/dots.png') no-repeat;
+        display: block;
+        position: absolute;
+        width: 2em;
+        height: 2em;
+        font-size: 7em;
+        background-size: cover;
+        z-index: -1;
+        right: 69%;
+        bottom: -16%;
+    }
+
     >section {
         display: flex;
         gap: 5em;
         width: 90%;
         margin: 2em auto;
+        margin-bottom: 7.5em;
 
         .imgCover {
-            font-size: 1.5em;
+            font-size: 1.6em;
             --radius: 0.9em;
             --bigRadius: 11.7em;
             background-color: var(--themeColor);
@@ -36,6 +51,10 @@
                 height: 100%;
                 position: absolute;
                 z-index: -1;
+            }
+
+            &::after {
+                @extend %squareDot;
             }
         }
 
@@ -80,6 +99,14 @@
                 z-index: -1;
                 font-size: 16em;
                 right: -0.1em;
+            }
+
+            &::after {
+                @extend %squareDot;
+                right: 45%;
+                top: 13%;
+                bottom: unset;
+                left: unset;
             }
         }
     }

@@ -2,7 +2,10 @@
     --themeColor: #1D71B9;
     background-color: #FAF9FF;
     --backgroundDark: #F0F4FD;
+    --backgroundAlt: #E7E7E7;
 
+
+    //_____general
     %squareDot {
         content: '';
         background: url('/Content/images/img/dots.png') no-repeat;
@@ -13,18 +16,21 @@
         font-size: 7em;
         background-size: cover;
         z-index: -1;
-        right: 69%;
-        bottom: -16%;
+
     }
 
-    >section {
-        display: flex;
-        gap: 5em;
-        width: 90%;
-        margin: 2em auto;
-        margin-bottom: 7.5em;
+    a.button {
+        background-color: var(--themeColor);
+        color: white;
+        display: inline-block;
+        width: max-content;
+        padding: .3em 0.8em;
+        font-size: 0.8em;
+        border-radius: 0.4em;
+    }
 
-        .imgCover {
+    .imgCover {
+        &.one {
             font-size: 1.6em;
             --radius: 0.9em;
             --bigRadius: 11.7em;
@@ -50,15 +56,27 @@
                 width: 100%;
                 height: 100%;
                 position: absolute;
-                z-index: -1;
             }
 
             &::after {
                 @extend %squareDot;
+                right: 69%;
+                bottom: -16%;
             }
-        }
 
-        .right {
+        }
+    }
+
+    //_____structure
+    >section {
+        display: flex;
+        gap: 5em;
+        padding-inline: 5%;
+        margin: 2em auto;
+        margin-bottom: 7.5em;
+        position: relative;
+
+        .content {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -87,7 +105,9 @@
                     list-style: disc inside;
                 }
             }
+        }
 
+        &:first-child .content {
             &::before {
                 content: "";
                 display: block;
@@ -105,9 +125,13 @@
                 @extend %squareDot;
                 right: 45%;
                 top: 13%;
-                bottom: unset;
-                left: unset;
             }
+        }
+
+        &.alt {
+            background-color: var(--backgroundAlt);
+            flex-direction: row-reverse;
+            width: 100%;
         }
     }
 

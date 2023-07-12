@@ -22,7 +22,8 @@
 
     }
 
-    a.button {
+    a.button, button.default {
+        cursor: pointer;
         background-color: var(--colorMain);
         color: white;
         display: inline-block;
@@ -251,7 +252,7 @@
                 padding: 2em;
                 margin-bottom: 5em;
 
-                input {
+                input[type="text"], textarea {
                     background-color: inherit;
                     border: 1px solid #d1d1d1;
                     border-radius: .5em;
@@ -260,6 +261,12 @@
                     font-size: inherit;
                     color: inherit;
                     padding: 1em 0.7em;
+                    margin-top: 0.4em;
+                    resize: none;
+                }
+
+                input[type="file"] {
+                    display: none;
                 }
 
                 &.grid {

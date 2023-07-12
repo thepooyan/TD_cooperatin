@@ -1,0 +1,87 @@
+#cooperation {
+    --themeColor: #1D71B9;
+    background-color: #FAF9FF;
+    --backgroundDark: #F0F4FD;
+
+    >section {
+        display: flex;
+        gap: 5em;
+        width: 90%;
+        margin: 2em auto;
+
+        .imgCover {
+            font-size: 1.5em;
+            --radius: 0.9em;
+            --bigRadius: 11.7em;
+            background-color: var(--themeColor);
+            border-radius: var(--bigRadius) var(--radius) var(--radius) var(--radius);
+            position: relative;
+            margin: 1.2em;
+
+            img {
+                width: 32em;
+                height: 32em;
+                background-size: cover;
+                border-radius: var(--radius) var(--radius) var(--bigRadius) var(--radius);
+                transform: translate(1em, 1em);
+            }
+
+            &::before {
+                content: "";
+                border: 0.1em solid var(--themeColor);
+                border-radius: var(--radius) var(--bigRadius) var(--radius) var(--radius);
+                transform: translate(-1em, -1em);
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: -1;
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1em;
+            font-size: 1.6em;
+
+            .title {
+                color: #383838;
+                font-size: 2.2em;
+                line-height: 1.8em;
+                font-weight: 800;
+            }
+
+            p {
+                color: #787879;
+                font-size: 0.9em;
+                font-weight: 500;
+            }
+
+            ul {
+                color: #383838;
+                font-weight: 500;
+                line-height: 1.8em;
+
+                li {
+                    list-style: disc inside;
+                }
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                background-color: var(--backgroundDark);
+                position: absolute;
+                width: 2em;
+                height: 2em;
+                border-radius: 50%;
+                z-index: -1;
+                font-size: 16em;
+                right: -0.1em;
+            }
+        }
+    }
+
+}

@@ -3,6 +3,8 @@
     background-color: #FAF9FF;
     --backgroundDark: #F0F4FD;
     --backgroundAlt: #E7E7E7;
+    --colorTitle: #383838;
+    --colorP: #787879;
 
 
     //_____general
@@ -25,19 +27,41 @@
         display: inline-block;
         width: max-content;
         padding: .3em 0.8em;
-        font-size: 0.8em;
+        font-size: 0.9em;
         border-radius: 0.4em;
     }
 
+    %innerSpan {
+        span {
+            color: var(--themeColor);
+        }
+    }
+
+    .subtitle {
+        font-size: 1.5em;
+        font-weight: 800;
+        @extend %innerSpan;
+    }
+
+    .title {
+        color: var(--colorTitle);
+        font-size: 2.2em;
+        line-height: 1.8em;
+        font-weight: 800;
+        @extend %innerSpan;
+    }
+
     .imgCover {
+        --radius: 0.9em;
+        --bigRadius: 11.7em;
+        font-size: 1.6em;
+        background-color: var(--themeColor);
+        position: relative;
+
         &.one {
-            font-size: 1.6em;
-            --radius: 0.9em;
-            --bigRadius: 11.7em;
-            background-color: var(--themeColor);
             border-radius: var(--bigRadius) var(--radius) var(--radius) var(--radius);
-            position: relative;
             margin: 1.2em;
+            margin-bottom: 2.5em;
 
             img {
                 width: 32em;
@@ -65,39 +89,53 @@
             }
 
         }
+
+        &.two {
+            border-radius: var(--radius) var(--radius) var(--bigRadius) var(--radius);
+
+            img {
+                width: 33em;
+                border-radius: var(--bigRadius) var(--radius) var(--radius) var(--radius);
+                transform: translate(-0.6em, -0.6em);
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 5em;
+                height: 5em;
+                border: 1px solid var(--themeColor);
+                border-radius: 50%;
+                position: absolute;
+                right: 80.5%;
+                font-size: 2.7em;
+                opacity: 0.2;
+                top: -5%;
+            }
+        }
     }
 
     //_____structure
     >section {
         display: flex;
         gap: 5em;
-        padding-inline: 5%;
-        margin: 2em auto;
-        margin-bottom: 7.5em;
+        padding: 5em 5%;
         position: relative;
 
         .content {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 1em;
+            gap: 1.6em;
             font-size: 1.6em;
 
-            .title {
-                color: #383838;
-                font-size: 2.2em;
-                line-height: 1.8em;
-                font-weight: 800;
-            }
-
             p {
-                color: #787879;
-                font-size: 0.9em;
+                color: var(--colorP);
                 font-weight: 500;
             }
 
             ul {
-                color: #383838;
+                color: var(--colorTitle);
                 font-weight: 500;
                 line-height: 1.8em;
 
@@ -107,24 +145,26 @@
             }
         }
 
-        &:first-child .content {
-            &::before {
-                content: "";
-                display: block;
-                background-color: var(--backgroundDark);
-                position: absolute;
-                width: 2em;
-                height: 2em;
-                border-radius: 50%;
-                z-index: -1;
-                font-size: 16em;
-                right: -0.1em;
-            }
+        &:first-child {
+            .content {
+                &::before {
+                    content: "";
+                    display: block;
+                    background-color: var(--backgroundDark);
+                    position: absolute;
+                    width: 2em;
+                    height: 2em;
+                    border-radius: 50%;
+                    z-index: -1;
+                    font-size: 16em;
+                    right: -0.1em;
+                }
 
-            &::after {
-                @extend %squareDot;
-                right: 45%;
-                top: 13%;
+                &::after {
+                    @extend %squareDot;
+                    right: 45%;
+                    top: 13%;
+                }
             }
         }
 

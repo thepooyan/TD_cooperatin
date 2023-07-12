@@ -1,6 +1,6 @@
 #cooperation {
     background-color: #FAF9FF;
-    --themeColor: #1D71B9;
+    --colorMain: #1D71B9;
     --backgroundDark: #F0F4FD;
     --backgroundAlt: #E7E7E7;
     --colorTitle: #383838;
@@ -23,7 +23,7 @@
     }
 
     a.button {
-        background-color: var(--themeColor);
+        background-color: var(--colorMain);
         color: white;
         display: inline-block;
         width: max-content;
@@ -34,7 +34,7 @@
 
     %innerSpan {
         span {
-            color: var(--themeColor);
+            color: var(--colorMain);
         }
     }
 
@@ -43,7 +43,7 @@
         display: block;
         width: 5em;
         height: 5em;
-        border: 1px solid var(--themeColor);
+        border: 1px solid var(--colorMain);
         border-radius: 50%;
         position: absolute;
         font-size: 2.7em;
@@ -68,7 +68,7 @@
         --radius: 0.9em;
         --bigRadius: 11.7em;
         font-size: 1.6em;
-        background-color: var(--themeColor);
+        background-color: var(--colorMain);
         position: relative;
 
         &.one {
@@ -86,7 +86,7 @@
 
             &::before {
                 content: "";
-                border: 0.1em solid var(--themeColor);
+                border: 0.1em solid var(--colorMain);
                 border-radius: var(--radius) var(--bigRadius) var(--radius) var(--radius);
                 transform: translate(-1em, -1em);
                 display: block;
@@ -221,4 +221,60 @@
         }
     }
 
+    form#cooperation {
+        background-color: var(--colorMain);
+        padding: 2em 7em;
+        font-size: 1.3em;
+
+        .subtitle {
+            color: white;
+            text-align: center;
+            margin: 1em;
+            // font-size: 2em;
+        }
+
+        >main {
+            background-color: white;
+            border-radius: 1em;
+            padding: 4em 8em;
+
+            >span {
+                font-size: 1.2em;
+                font-weight: 500;
+                margin-bottom: 0.8em;
+                display: block;
+            }
+
+            .container {
+                background-color: #F5F5F5;
+                border-radius: inherit;
+                padding: 2em;
+                margin-bottom: 5em;
+
+                input {
+                    background-color: inherit;
+                    border: 1px solid #d1d1d1;
+                    border-radius: .5em;
+                    display: block;
+                    width: 100%;
+                    font-size: inherit;
+                    color: inherit;
+                    padding: 1em 0.7em;
+                }
+
+                &.grid {
+                    display: grid;
+                    gap: 3em;
+
+                    &.two {
+                        grid-template-columns: auto auto;
+                    }
+
+                    &.three {
+                        grid-template-columns: auto auto auto;
+                    }
+                }
+            }
+        }
+    }
 }

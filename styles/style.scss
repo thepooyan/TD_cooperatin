@@ -113,6 +113,16 @@
                 top: -5%;
             }
         }
+
+        &.left , &.right {
+            border-radius: var(--radius);
+
+            img {
+                width: 30em;
+                border-radius: var(--radius) var(--radius) var(--bigRadius) var(--radius);
+                transform: translate(.5em, -.5em);
+            }
+        }
     }
 
     //_____structure

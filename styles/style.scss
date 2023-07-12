@@ -114,13 +114,19 @@
             }
         }
 
-        &.left , &.right {
+        &.left,
+        &.right {
             border-radius: var(--radius);
 
             img {
                 width: 30em;
                 border-radius: var(--radius) var(--radius) var(--bigRadius) var(--radius);
                 transform: translate(.5em, -.5em);
+            }
+
+            &.right img {
+                transform: translate(-.5em, -.5em);
+                border-radius: var(--radius) var(--radius) var(--radius) var(--bigRadius);
             }
         }
     }

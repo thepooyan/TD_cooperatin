@@ -1,3 +1,4 @@
+@use 'sass:color';
 #cooperation {
     background-color: #FAF9FF;
     --colorMain: #1D71B9;
@@ -223,6 +224,12 @@
     }
 
     form#cooperation {
+        --colorBorder: #d1d1d1;
+        $colorBackground:  #F5F5F5;
+        --colorBackground: #{$colorBackground};
+        --colorBackgroundDim: #{color.adjust($colorBackground, $blackness: +10%)};
+
+
         background-color: var(--colorMain);
         padding: 3em 7em;
         font-size: 1.3em;
@@ -261,7 +268,7 @@
             }
 
             .container {
-                background-color: #F5F5F5;
+                background-color: var(--colorBackground);
                 border-radius: inherit;
                 padding: 2em;
                 margin-bottom: 5em;
@@ -269,7 +276,7 @@
 
                 input[type="text"], textarea {
                     background-color: inherit;
-                    border: 1px solid #d1d1d1;
+                    border: 1px solid var(--colorBorder);
                     border-radius: .5em;
                     display: block;
                     width: 100%;
@@ -284,6 +291,37 @@
 
                 input[type="file"] {
                     display: none;
+                }
+
+                input[type="checkbox"] {
+                    display: none;
+
+                    & + .checkbox {
+                        width: 1em;
+                        height: 1em;
+                        display: inline-block;
+                        border: 1px solid var(--colorBorder);
+                        background-color: var(--colorBackground);
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: var(--colorBackgroundDim);
+                        }
+                    }
+
+                    &:checked + .checkbox {
+                        border-color: var(--colorMain);
+                        &::before {
+                            content: '';
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            background-color: var(--colorMain);
+                            border-radius: 50%;
+                            transform: scale(.65);
+                        }
+                    }
                 }
 
                 button {
@@ -311,6 +349,15 @@
                         grid-column: 1 / -1;
                     }
                 }
+
+                &.checkboxes {
+                    label {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: .4em;
+                        margin-left: 2em;
+                    }
+                }
             }
 
             #captcha {
@@ -327,7 +374,7 @@
                     margin-right: auto;
                 }
                 input {
-                    border: 1px solid #d1d1d1;
+                    border: 1px solid var(--colorBorder);
                     border-radius: 0.5em;
                 }
             }

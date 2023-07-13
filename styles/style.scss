@@ -1,12 +1,21 @@
 @use 'sass:color';
+@import '../content/source/Variables';
+
+@mixin grababel() {
+    cursor: grab;
+    &:active {
+        cursor: grabbing;
+    }
+}
+
 #cooperation {
     background-color: #FAF9FF;
     --colorMain: #1D71B9;
     --backgroundDark: #F0F4FD;
     --backgroundAlt: #E7E7E7;
     --colorTitle: #383838;
-    // --colorP: #6B6B6B;
-    --colorP: #848484;
+    $colorP: #848484;
+    --colorP: #{$colorP};
 
 
     //_____general
@@ -23,7 +32,8 @@
 
     }
 
-    a.button, button.default {
+    a.button,
+    button.default {
         cursor: pointer;
         background-color: var(--colorMain);
         color: white;
@@ -223,9 +233,95 @@
         }
     }
 
+    .teachers {
+        background-color: var(--backgroundAlt);
+        padding: 2em 3em;
+        color: var(--colorP);
+
+        .item {
+            display: flex;
+            width: 81.6%;
+            margin: auto;
+            gap: 2em;
+            align-items: center;
+            transition: .2s;
+            padding: 2em;
+            margin-block: 2em;
+            border-radius: 1.2em;
+            @include grababel();
+
+            img {
+                width: 18.4em;
+                height: 21em;
+                border-radius: 5.9em 1.3em 1.3em 1.3em;
+            }
+            .titr {
+                font-weight: 800;
+                font-size: 1.5em;
+            }
+            span {
+                font-size: 1.3em;
+            }
+            p {
+                font-size: 1.2em;
+                margin-top: 1em;
+            }
+            &:hover {
+                box-shadow: 0px 0px 19px rgba(131, 131, 131, 0.21);
+            }
+        }
+
+        &::before {
+            content: ",,";
+            position: absolute;
+            left: 0;
+            right: 0;
+            font-size: 9em;
+            bottom: calc(100% - -0.1em);
+            text-align: center;
+        }
+
+        .owl-nav {
+            height: 0;
+            button {
+                border: 0.14em solid var(--colorP);
+                border-radius: 50%;
+                width: 2em;
+                height: 2em;
+                position: absolute;
+                --offset: 3em;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                font-size: 2em;
+                opacity: .6;
+                transition: .2s;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &::before {
+                    @include fontAwsome('f054', 900);
+                }
+                &.owl-prev {
+                    left:var(--offset);
+                    &::before {
+                        content: '\f053';
+                    }
+                }
+                &.owl-next {
+                    right:var(--offset);
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
     form#cooperation {
         --colorBorder: #d1d1d1;
-        $colorBackground:  #F5F5F5;
+        $colorBackground: #F5F5F5;
         --colorBackground: #{$colorBackground};
         --colorBackgroundDim: #{color.adjust($colorBackground, $blackness: +10%)};
 
@@ -240,7 +336,7 @@
             margin: 1em;
             position: relative;
             margin-bottom: 4em;
-            
+
             &::before {
                 content: "";
                 background-color: white;
@@ -274,7 +370,8 @@
                 margin-bottom: 5em;
                 color: var(--colorP);
 
-                input[type="text"], textarea {
+                input[type="text"],
+                textarea {
                     background-color: inherit;
                     border: 1px solid var(--colorBorder);
                     border-radius: .5em;
@@ -296,7 +393,7 @@
                 input[type="checkbox"] {
                     display: none;
 
-                    & + .checkbox {
+                    &+.checkbox {
                         width: 1em;
                         height: 1em;
                         display: inline-block;
@@ -310,8 +407,9 @@
                         }
                     }
 
-                    &:checked + .checkbox {
+                    &:checked+.checkbox {
                         border-color: var(--colorMain);
+
                         &::before {
                             content: '';
                             display: block;
@@ -328,6 +426,7 @@
                     padding: 0.7em 1em;
                     border-radius: 0.9em;
                     margin-left: 1em;
+
                     * {
                         cursor: pointer;
                     }
@@ -362,17 +461,19 @@
 
             #captcha {
                 display: flex;
-                align-items:stretch;
+                align-items: stretch;
                 gap: .5em;
-                
+
                 img {
                     width: 10em;
                 }
+
                 button {
                     padding: 1em 2.6em;
                     border-radius: 0.7em;
                     margin-right: auto;
                 }
+
                 input {
                     border: 1px solid var(--colorBorder);
                     border-radius: 0.5em;

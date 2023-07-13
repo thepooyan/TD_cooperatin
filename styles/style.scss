@@ -224,14 +224,28 @@
 
     form#cooperation {
         background-color: var(--colorMain);
-        padding: 2em 7em;
+        padding: 3em 7em;
         font-size: 1.3em;
 
         .subtitle {
             color: white;
             text-align: center;
             margin: 1em;
-            // font-size: 2em;
+            position: relative;
+            margin-bottom: 4em;
+            
+            &::before {
+                content: "";
+                background-color: white;
+                width: 3px;
+                height: 1.2em;
+                display: block;
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: calc(100% + 0.5em);
+                margin: auto;
+            }
         }
 
         >main {
@@ -251,6 +265,7 @@
                 border-radius: inherit;
                 padding: 2em;
                 margin-bottom: 5em;
+                color: var(--colorP);
 
                 input[type="text"], textarea {
                     background-color: inherit;
@@ -263,15 +278,26 @@
                     padding: 1em 0.7em;
                     margin-top: 0.4em;
                     resize: none;
+                    font-family: inherit;
+                    margin-bottom: 1em;
                 }
 
                 input[type="file"] {
                     display: none;
                 }
 
+                button {
+                    padding: 0.7em 1em;
+                    border-radius: 0.9em;
+                    margin-left: 1em;
+                    * {
+                        cursor: pointer;
+                    }
+                }
+
                 &.grid {
                     display: grid;
-                    gap: 3em;
+                    gap: 0 2em;
 
                     &.two {
                         grid-template-columns: auto auto;
@@ -280,6 +306,29 @@
                     &.three {
                         grid-template-columns: auto auto auto;
                     }
+
+                    .full {
+                        grid-column: 1 / -1;
+                    }
+                }
+            }
+
+            #captcha {
+                display: flex;
+                align-items:stretch;
+                gap: .5em;
+                
+                img {
+                    width: 10em;
+                }
+                button {
+                    padding: 1em 2.6em;
+                    border-radius: 0.7em;
+                    margin-right: auto;
+                }
+                input {
+                    border: 1px solid #d1d1d1;
+                    border-radius: 0.5em;
                 }
             }
         }

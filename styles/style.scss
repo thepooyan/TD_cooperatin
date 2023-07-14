@@ -3,6 +3,7 @@
 
 @mixin grababel() {
     cursor: grab;
+
     &:active {
         cursor: grabbing;
     }
@@ -66,6 +67,25 @@
         font-size: 1.5em;
         font-weight: 800;
         @extend %innerSpan;
+
+        &.line {
+            position: relative;
+            margin-bottom: 3em;
+            text-align: center;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: calc(100% + .3em);
+                width: 3px;
+                height: 1em;
+                background-color: black;
+                margin: auto;
+            }
+        }
     }
 
     .title {
@@ -233,6 +253,52 @@
         }
     }
 
+    .commonQ {
+        padding: 4.7em 4em;
+        font-size: 1.3em;
+
+        .Q, .A {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 0.4em;
+            margin: auto;
+            margin-bottom: 3px;
+            padding: 0.8em 1em;
+            width: 84%;
+
+            &.Q {
+                font-weight: bold;
+                position: relative;
+                cursor: pointer;
+                user-select: none;
+
+                &::before {
+                    @include fontAwsome('f078', 900);
+                    position: absolute;
+                    left: 1em;
+                    transition: .3s;
+                }
+
+                &.active::before {
+                    transform: rotate(180deg);
+                }
+            }
+
+            &.A {
+                padding-block: 0;
+                max-height: 0;
+                overflow: hidden;
+                border-width: 0;
+                transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+
+                &.active {
+                    max-height: 20em;
+                    padding-block: .8em;
+                    border-width: 1px;
+                }
+            }
+        }
+    }
+
     .teachers {
         background-color: var(--backgroundAlt);
         padding: 2em 3em;
@@ -255,17 +321,21 @@
                 height: 21em;
                 border-radius: 5.9em 1.3em 1.3em 1.3em;
             }
+
             .titr {
                 font-weight: 800;
                 font-size: 1.5em;
             }
+
             span {
                 font-size: 1.3em;
             }
+
             p {
                 font-size: 1.2em;
                 margin-top: 1em;
             }
+
             &:hover {
                 box-shadow: 0px 0px 19px rgba(131, 131, 131, 0.21);
             }
@@ -283,6 +353,7 @@
 
         .owl-nav {
             height: 0;
+
             button {
                 border: 0.14em solid var(--colorP);
                 border-radius: 50%;
@@ -303,15 +374,19 @@
                 &::before {
                     @include fontAwsome('f054', 900);
                 }
+
                 &.owl-prev {
-                    left:var(--offset);
+                    left: var(--offset);
+
                     &::before {
                         content: '\f053';
                     }
                 }
+
                 &.owl-next {
-                    right:var(--offset);
+                    right: var(--offset);
                 }
+
                 &:hover {
                     opacity: 1;
                 }

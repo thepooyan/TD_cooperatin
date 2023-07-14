@@ -34,4 +34,14 @@ $(function () {
             autoplaySpeed: 900,
         });
     }
+
+    const commonQ = dc.queries('.commonQ .Q');
+    if (commonQ) {
+        commonQ.forEach(Q => {
+            Q.onclick = _ => {
+                Q.nextElementSibling.classList.toggle('active');
+                Q.classList.toggle('active');
+            }
+        })
+    }
 })

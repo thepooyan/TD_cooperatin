@@ -204,7 +204,8 @@
       <div class="container grid two">
         <label>
           نام
-          <input type="text">
+          <input type="text" data-validate='["notEmpty"]'>
+          <span class="validationMsg"></span>
         </label>
         <label>
           نام خانوادگی
@@ -297,6 +298,7 @@
   <script type="module" src="./content/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
   <script type="module" src="./scripts/moduls/queryLib.js"></script>
   <script type="module" src="./scripts/moduls/modal.js"></script>
+  <script type="module" src="./scripts/moduls/customSelect.js"></script>
   <script type="module" src="./scripts/main.js"></script>
 </body>
 

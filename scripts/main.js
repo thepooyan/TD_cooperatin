@@ -5,7 +5,14 @@ $(function () {
     if (cooperationForm) {
         cooperationForm.onsubmit = e => {
             e.preventDefault();
-            alert('submit');
+            //check if form info is correct
+            validateSection(cooperationForm)
+            .then(() => {
+                alert('با موفقیت ثبت شد');
+            })
+            .catch(() => {
+                alert('برو اطلاعاتت رو درست وارد کن گورخر');
+            })
         }
     }
 

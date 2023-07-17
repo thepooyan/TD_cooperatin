@@ -209,15 +209,15 @@
         </label>
         <label>
           نام خانوادگی
-          <input type="text">
+          <input type="text" data-validate='["notEmpty"]'>
         </label>
         <label>
           مقطع تحصیلی
-          <input type="text">
+          <input type="text" data-validate='["notEmpty"]'>
         </label>
         <label>
           رشته تحصیلی
-          <input type="text">
+          <input type="text" data-validate='["notEmpty"]'>
         </label>
       </div>
 
@@ -299,6 +299,7 @@
   <script type="module" src="./scripts/moduls/queryLib.js"></script>
   <script type="module" src="./scripts/moduls/modal.js"></script>
   <script type="module" src="./scripts/moduls/customSelect.js"></script>
+  <script type="module" src="./scripts/moduls/validation.js"></script>
   <script type="module" src="./scripts/main.js"></script>
 </body>
 

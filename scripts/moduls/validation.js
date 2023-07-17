@@ -137,3 +137,5 @@ function setValidations() {
 
     });
 }
+window.setValidations = setValidations;
+window.validateSection = validateSection;

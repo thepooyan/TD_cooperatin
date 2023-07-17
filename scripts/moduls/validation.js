@@ -82,7 +82,7 @@ function checkValidation(element) {
     }
     if (!msgBox || !msgBox.classList.contains('validationMsg')) {
         console.log(element);
-        console.log(`above logged input has no validation box. please add a span with "validationMsg" classname next to it!`);
+        console.log(`above logged input has no validation box. do not interfier with creation of span with 'validationMsg' class`);
         return;
     }
     validation.forEach(vali => {
@@ -110,6 +110,9 @@ function alertValidationErrs(element, reject) {
         });
     }
 }
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
 //*validate section
 function validateSection(section) {
     return new Promise((resolve, reject) => {
@@ -125,16 +128,16 @@ function setValidations() {
     dc.queries('[data-validate]').forEach(i => {
         let msgBox = i.nextElementSibling;
         if (!msgBox || !msgBox.classList.contains('validationMsg')) {
+            msgBox = document.createElement('span');
+            msgBox.classList.add('validationMsg');
+            insertAfter(i, msgBox);
             console.log(i);
-            console.log(`above logged input has no validation box. please add a span with "validationMsg" classname next to it!`);
-            return;
-        } else {
-            i.onchange = () => {
-                checkValidation(i);
-                alertValidationErrs(i);
-            };
+            console.log(`above logged input had no validation box. so we added a span with "validationMsg" classname next to it!`);
         }
-
+        i.onchange = () => {
+            checkValidation(i);
+            alertValidationErrs(i);
+        };
     });
 }
 window.setValidations = setValidations;

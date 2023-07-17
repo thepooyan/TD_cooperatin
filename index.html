@@ -253,7 +253,7 @@
       <span>سوابق کاری</span>
       <div class="container">
         متنی در مورد ویژگی‌های شخصیتی و حرفه‌ای خود بنویسید
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea data-validate='["notEmpty"]' name="" id="" cols="30" rows="10"></textarea>
 
         <button class="default" type="button">
           <label for="file">
@@ -268,15 +268,15 @@
       <div class="container grid three">
         <label>
           تلفن ثابت
-          <input type="text">
+          <input type="text" data-validate='["notEmpty"]'>
         </label>
         <label>
           تلفن همراه
-          <input type="text">
+          <input type="text" data-validate='["notEmpty"]'>
         </label>
         <label>
           ایمیل
-          <input type="text">
+          <input type="text" data-validate='["notEmpty"]'>
         </label>
         <label class="full">
           توضیحات

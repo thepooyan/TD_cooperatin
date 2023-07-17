@@ -288,7 +288,7 @@
                 max-height: 0;
                 overflow: hidden;
                 border-width: 0;
-                transition: 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+                transition: 0.8s cubic-bezier(.25,.1,.19,.93);
 
                 &.active {
                     max-height: 20em;

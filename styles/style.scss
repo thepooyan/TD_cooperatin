@@ -461,10 +461,16 @@
                     margin-top: 0.4em;
                     resize: none;
                     font-family: inherit;
-                    margin-bottom: 1em;
+                    margin-bottom: .3em;
 
                     &.ltr {
                         direction: ltr;
+                    }
+                    &.center {
+                        text-align: center;
+                    }
+                    &.validationError {
+                        border-color: red;
                     }
                 }
 

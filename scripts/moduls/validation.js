@@ -103,6 +103,7 @@ function alertValidationErrs(element, reject) {
     let msgBox = element.nextElementSibling;
     if (Object.keys(element.errorList).length === 0) {
         msgBox.classList.remove('show');
+        element.classList.remove('validationError');
     }
     else {
         let HigherOrder = Object.values(element.errorList).reduce((p, c) => p.order < c.order ? p : c).order;
@@ -116,6 +117,7 @@ function alertValidationErrs(element, reject) {
                 msgBox.innerHTML += ` و ${i.content}`;
             }
             msgBox.classList.add('show');
+            element.classList.add('validationError');
             reject && reject();
         });
     }

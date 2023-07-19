@@ -596,8 +596,15 @@
                         position: absolute;
                         top: calc(100% + 0.5em);
                         right: 0;
-                        width: 100%;
+                        width: 150%;
                         color: red;
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: .2s;
+
+                        &.show {
+                            max-height: 2em;
+                        }
                     }
                 }
             }

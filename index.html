@@ -364,15 +364,15 @@
       <div class="container grid three">
         <label>
           تلفن ثابت
-          <input class="ltr" type="text" data-validate='["notEmpty"]'>
+          <input class="ltr" type="text" data-validate='["notEmpty", "number"]'>
         </label>
         <label>
           تلفن همراه
-          <input class="ltr" type="text" data-validate='["notEmpty"]'>
+          <input class="ltr" type="text" data-validate='["notEmpty", "number"]'>
         </label>
         <label>
           ایمیل
-          <input class="ltr" type="text" data-validate='["notEmpty"]'>
+          <input class="ltr" type="text" data-validate='["notEmpty", "email"]'>
         </label>
         <label class="full">
           توضیحات
@@ -383,7 +383,7 @@
       <span>کد امنیتی</span>
       <div id="captcha">
         <label>
-          <input type="text" data-validate='["notEmpty"]'>
+          <input type="text" data-validate='["notEmpty", "number"]'>
         </label>
         <img src="public/admin/captcha.png">
         <button type="submit" class="default">ثبت</button>

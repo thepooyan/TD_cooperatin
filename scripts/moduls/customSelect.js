@@ -41,7 +41,6 @@ function initCustomSelect(className = 'select') {
                     close()
             })
             function open() {
-                console.log('o');
                 let posY = wrapper.getBoundingClientRect().y;
                 let half = (window.innerHeight / 2) - posY; //position relative to the center of the screen
                 let remainingBottom = window.innerHeight - posY;

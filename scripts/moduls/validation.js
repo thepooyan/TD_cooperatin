@@ -2,11 +2,12 @@
 function checkValidation(element) {
     const vaidationProiorities = {
         notEmpty: 0,
+        checkbox: 0,
         number: 1,
         email: 1,
         NEQ: 1,
         length: 2,
-        noSpace: 3
+        noSpace: 3,
     };
 
     let validation = JSON.parse(element.dataset.validate);
@@ -77,6 +78,15 @@ function checkValidation(element) {
                 break;
             case 'noSpace':
                 errorCheck(value.includes(' '), 'لطفا از فاصله استفاده نکنید', vali);
+                break;
+            case 'checkbox':
+                let isError = true;
+                let group = element.dataset.groupwith;
+                dc.queries(`input[type="checkbox"][data-groupwith="${group}"]`).forEach(item=>{
+                    if (item.checked)
+                    isError = false;
+                });
+                errorCheck(isError, 'لطفا یک مورد را انتخاب کنید', vali);
                 break;
         }
     }

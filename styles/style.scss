@@ -446,7 +446,8 @@
                 color: var(--colorP);
 
                 input[type="text"],
-                textarea {
+                textarea,
+                .select {
                     background-color: inherit;
                     border: 1px solid var(--colorBorder);
                     border-radius: .5em;

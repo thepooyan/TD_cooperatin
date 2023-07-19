@@ -1,5 +1,6 @@
 $(function () {
     setValidations();
+    initCustomSelect();
 
     const cooperationForm = dc.query('form#cooperation');
     if (cooperationForm) {

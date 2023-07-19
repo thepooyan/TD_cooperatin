@@ -4,12 +4,17 @@ $(function () {
 
     const cooperationForm = dc.query('form#cooperation');
     if (cooperationForm) {
+        const clearForm = () => {
+            cooperationForm.reset();
+        };
+
         cooperationForm.onsubmit = e => {
             e.preventDefault();
             //check if form info is correct
             validateSection(cooperationForm)
             .then(() => {
                 alert('با موفقیت ثبت شد');
+                clearForm();
             })
             .catch(() => {
                 alert('برو اطلاعاتت رو درست وارد کن گورخر');

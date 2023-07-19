@@ -141,8 +141,6 @@ function setValidations() {
             msgBox = document.createElement('span');
             msgBox.classList.add('validationMsg');
             insertAfter(i, msgBox);
-            console.log(i);
-            console.log(`above logged input had no validation box. so we added a span with "validationMsg" classname next to it!`);
         }
         i.onchange = () => {
             checkValidation(i);

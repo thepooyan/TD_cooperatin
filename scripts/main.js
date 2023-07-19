@@ -27,10 +27,10 @@ $(function () {
         const groupName = item.dataset.groupwith;
         const group = dc.queries(`[data-groupWith="${groupName}"]`);
         if (!group) return
-        item.onchange = () => {
+        item.addEventListener("change", () => {
             group.forEach(i => i.checked = false);
             item.checked = true;
-        }
+        })
         item.checked = false;
     })
 

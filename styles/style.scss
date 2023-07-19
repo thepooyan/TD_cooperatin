@@ -257,7 +257,8 @@
         padding: 4.7em 4em;
         font-size: 1.3em;
 
-        .Q, .A {
+        .Q,
+        .A {
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 0.4em;
             margin: auto;
@@ -288,7 +289,7 @@
                 max-height: 0;
                 overflow: hidden;
                 border-width: 0;
-                transition: 0.8s cubic-bezier(.25,.1,.19,.93);
+                transition: 0.8s cubic-bezier(.25, .1, .19, .93);
 
                 &.active {
                     max-height: 20em;
@@ -521,7 +522,7 @@
                     overflow: hidden;
                     max-height: 0;
                     transition: .2s;
-                        
+
                     &.show {
                         max-height: 2em;
                     }
@@ -580,11 +581,24 @@
                     margin-right: auto;
                 }
 
-                input {
-                    border: 1px solid var(--colorBorder);
-                    border-radius: 0.5em;
-                    margin-left: 2em;
-                    text-align: center;
+                label {
+                    position: relative;
+
+                    input {
+                        border: 1px solid var(--colorBorder);
+                        border-radius: 0.5em;
+                        margin-left: 2em;
+                        text-align: center;
+                        height: 100%;
+                    }
+
+                    .validationMsg {
+                        position: absolute;
+                        top: calc(100% + 0.5em);
+                        right: 0;
+                        width: 100%;
+                        color: red;
+                    }
                 }
             }
         }

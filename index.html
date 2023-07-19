@@ -379,7 +379,9 @@
 
       <span>کد امنیتی</span>
       <div id="captcha">
-        <input type="text">
+        <label>
+          <input type="text" data-validate='["notEmpty"]'>
+        </label>
         <img src="public/admin/captcha.png">
         <button type="submit" class="default">ثبت</button>
       </div>

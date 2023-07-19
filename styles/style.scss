@@ -462,6 +462,11 @@
                     margin-bottom: 1em;
                 }
 
+                .select {
+                    display: flex;
+                    align-items: center;
+                }
+
                 input[type="file"] {
                     display: none;
                 }
@@ -533,11 +538,11 @@
                     gap: 0 2em;
 
                     &.two {
-                        grid-template-columns: auto auto;
+                        grid-template-columns: repeat(2, 1fr);
                     }
 
                     &.three {
-                        grid-template-columns: auto auto auto;
+                        grid-template-columns: repeat(3, 1fr);
                     }
 
                     .full {

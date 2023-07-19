@@ -31,6 +31,7 @@ $(function () {
             group.forEach(i => i.checked = false);
             item.checked = true;
         }
+        item.checked = false;
     })
 
     const teacherCarousel = dc.query('body > .teachers.owl-carousel');

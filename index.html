@@ -349,7 +349,7 @@
           مجرد
         </label>
         <label>
-          <input type="checkbox" data-groupWith="couple" data-validate='["checkbox"]'> 
+          <input type="checkbox" data-groupWith="couple" data-validate='["checkbox"]'>
           <span class="checkbox"></span>
           متاهل
         </label>
@@ -359,10 +359,14 @@
       <div class="container">
         متنی در مورد ویژگی‌های شخصیتی و حرفه‌ای خود بنویسید
         <textarea data-validate='["notEmpty"]' name="" id="" cols="30" rows="10"></textarea>
-        <label for="">
-          ابتدا فایل سوابق خود را بر روی سایت های آپلودر، اپلود کنید، سپس لینک فایل را برای ما ارسال کنید
-          <input type="text" placeholder="محل قرارگیری لینک فایل آپلود شده" class="center">
-        </label>
+        <button class="default" type="button">
+          <label for="file">
+            choose file...
+            <input type="file" accept="application/PDF" id="file">
+          </label>
+        </button>
+        فایل سوابق خود را با فرمت PDF وارد کنید
+
       </div>
 
       <span>اطلاعات تماس</span>

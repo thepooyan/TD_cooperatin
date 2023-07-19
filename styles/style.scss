@@ -466,12 +466,18 @@
                     &.ltr {
                         direction: ltr;
                     }
+
                     &.center {
                         text-align: center;
                     }
+
                     &.validationError {
                         border-color: red;
                     }
+                }
+
+                input::placeholder, .select>span {
+                    opacity: .65;
                 }
 
                 textarea {
@@ -615,6 +621,10 @@
                         margin-left: 2em;
                         text-align: center;
                         height: 100%;
+                        
+                        &.validationError {
+                            border-color: red;
+                        }
                     }
 
                     .validationMsg {

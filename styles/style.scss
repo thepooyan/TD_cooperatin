@@ -457,6 +457,7 @@
                     font-size: inherit;
                     color: inherit;
                     padding: 1em 0.7em;
+                    height: 3.65em;
                     margin-top: 0.4em;
                     resize: none;
                     font-family: inherit;
@@ -465,6 +466,10 @@
                     &.ltr {
                         direction: ltr;
                     }
+                }
+
+                textarea {
+                    height: unset;
                 }
 
                 .select {
@@ -563,9 +568,13 @@
                         gap: .4em;
                         margin-left: 2em;
                         position: relative;
+
                         &:nth-child(2) {
-                            .validationMsg {display: none;}
+                            .validationMsg {
+                                display: none;
+                            }
                         }
+
                         .validationMsg {
                             position: absolute;
                             right: 0;

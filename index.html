@@ -222,9 +222,18 @@
           نام خانوادگی
           <input type="text" data-validate='["notEmpty"]'>
         </label>
-        <label>
+        <label for="">
           مقطع تحصیلی
-          <input type="text" data-validate='["notEmpty"]'>
+          <div class="select" data-validate='["NEQ"]' data-neq="0" data-neqerror="لطفا انتحاب کنید">
+            <select name="" id="">
+              <option value="0">انتخاب کنید</option>
+              <option value="1">زیر دیپلم</option>
+              <option value="2">دیپلم</option>
+              <option value="3">فوق دیپلم</option>
+              <option value="4">لیسانس</option>
+              <option value="5">بالاتر</option>
+            </select>
+          </div>
         </label>
         <label>
           رشته تحصیلی

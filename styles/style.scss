@@ -460,6 +460,10 @@
                     resize: none;
                     font-family: inherit;
                     margin-bottom: 1em;
+
+                    &.ltr {
+                        direction: ltr;
+                    }
                 }
 
                 .select {

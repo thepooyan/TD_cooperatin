@@ -642,6 +642,14 @@
                         }
                     }
                 }
+                
+                a {
+                    border: 1px solid var(--colorBorder);
+                    border-radius: 0.6em;
+                    height: max-content;
+                    padding: 0.6em;
+                    margin-left: 0.4em;
+                }
             }
         }
     }

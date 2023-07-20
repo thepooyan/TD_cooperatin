@@ -138,6 +138,7 @@ function validateSection(section) {
 //* set all vaidations
 function setValidations() {
     dc.queries('[data-validate]').forEach(i => {
+
         let msgBox = i.nextElementSibling;
         if (!msgBox || !msgBox.classList.contains('validationMsg')) {
             msgBox = document.createElement('span');
@@ -150,5 +151,14 @@ function setValidations() {
         };
     });
 }
+function clearValidationAlerts(section) {
+    section.querySelectorAll('.validationError').forEach(i => {
+        i.classList.remove('validationError');
+    })
+    section.querySelectorAll('.validationMsg.show').forEach(i => {
+        i.classList.remove('show');
+    })
+}
+window.clearValidationAlerts = clearValidationAlerts;
 window.setValidations = setValidations;
 window.validateSection = validateSection;

@@ -809,5 +809,17 @@
                 }
             }
         }
+
+        #cooperationForm {
+            padding-inline: 3.5%;
+            
+            > main {
+                padding-inline: 5%;
+
+                .checkboxes {
+                    font-size: 1.1em;
+                }
+            }
+        }
     }
 }

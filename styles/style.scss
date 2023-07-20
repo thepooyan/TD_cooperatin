@@ -600,8 +600,22 @@
                 align-items: stretch;
                 gap: .5em;
 
-                img {
-                    width: 10em;
+
+
+                >div {
+                    display: flex;
+
+                    img {
+                        width: 10em;
+                    }
+
+                    a {
+                        border: 1px solid var(--colorBorder);
+                        border-radius: 0.6em;
+                        height: max-content;
+                        padding: 0.6em;
+                        margin-left: 0.4em;
+                    }
                 }
 
                 button {
@@ -641,13 +655,7 @@
                     }
                 }
 
-                a {
-                    border: 1px solid var(--colorBorder);
-                    border-radius: 0.6em;
-                    height: max-content;
-                    padding: 0.6em;
-                    margin-left: 0.4em;
-                }
+
             }
         }
     }
@@ -659,22 +667,101 @@
     }
 
     @include media($laptop) {
-        .subtitle, .title {
+
+        .subtitle,
+        .title {
             text-align: center;
         }
+
         >section {
             flex-direction: column-reverse !important;
-            button, a.button {
+
+            button,
+            a.button {
                 margin: auto;
             }
         }
+
         .teachers .item {
             flex-direction: column;
         }
     }
 
     @include media($tablet) {
-        background-color: red;
+        .imgCover {
+            &.two::before {
+                right: 66.5%;
+            }
+
+            &.right.right::before {
+                right: 70%;
+            }
+        }
+
+        >section:first-child .content {
+
+            &::before {
+                font-size: 13em;
+            }
+
+            &::after {
+                right: 44%;
+            }
+        }
+
+        .teachers {
+            .owl-nav button {
+                --offset: 1em;
+                bottom: 22em;
+            }
+
+            .item {
+                width: 100%;
+
+                .titr,
+                span {
+                    text-align: center;
+                    display: block;
+                }
+            }
+        }
+
+        #cooperationForm>main {
+            padding-block: 1em;
+
+            button {
+                width: 100%;
+                margin-bottom: 1em;
+            }
+
+            .container.grid {
+                grid-template-columns: auto !important;
+            }
+
+            #captcha {
+                flex-direction: column;
+                gap: 1em;
+
+                label {
+                    input {
+                        width: 100%;
+                        height: 3em;
+                        margin-bottom: 1em;
+                    }
+
+                    .validationMsg {
+                        position: static;
+                        width: 100%;
+                        display: block;
+                    }
+                }
+
+                >div {
+                    justify-content: space-between;
+                }
+            }
+        }
+
     }
 
     @include media($mobile) {

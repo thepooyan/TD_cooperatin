@@ -5,15 +5,14 @@ $(function () {
     const cooperationForm = dc.query('form#cooperation');
     if (cooperationForm) {
 
-        const resetButton = dc.query('button#resetBTN');
         const clearForm = () => {
             cooperationForm.reset();
             clearValidationAlerts(cooperationForm);
+            cooperationForm.querySelectorAll('select').forEach(i => {
+                i.onchange();
+            })
         };
 
-        resetButton.onclick = () => {
-            clearForm();
-        }
         cooperationForm.onsubmit = e => {
             e.preventDefault();
             //check if form info is correct

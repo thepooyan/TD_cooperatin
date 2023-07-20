@@ -398,7 +398,7 @@
         }
     }
 
-    form#cooperation {
+    #cooperationForm {
         --colorBorder: #d1d1d1;
         $colorBackground: #F5F5F5;
         --colorBackground: #{$colorBackground};
@@ -663,7 +663,7 @@
        } 
     }
     @include media($laptop) {
-        background-color: green;
+        
     }
     @include media($tablet) {
         background-color: red;

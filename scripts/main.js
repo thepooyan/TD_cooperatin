@@ -2,7 +2,7 @@ $(function () {
     setValidations();
     initCustomSelect();
 
-    const cooperationForm = dc.query('form#cooperation');
+    const cooperationForm = dc.query('#cooperationForm');
     if (cooperationForm) {
 
         const clearForm = () => {

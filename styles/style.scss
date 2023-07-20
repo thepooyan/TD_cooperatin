@@ -108,8 +108,6 @@
 
         &.one {
             border-radius: var(--bigRadius) var(--radius) var(--radius) var(--radius);
-            margin: 1.2em;
-            margin-bottom: 2.5em;
 
             img {
                 width: 32em;
@@ -237,16 +235,12 @@
             }
         }
 
-        &:nth-child(2) {
-            z-index: -2;
-
-            &::before {
-                @extend %squareDot;
-                bottom: -1em;
-                right: -0.3em;
-                font-size: 16.1em;
-                opacity: 0.4;
-            }
+        &:nth-child(2)::before {
+            @extend %squareDot;
+            bottom: -1em;
+            right: -0.3em;
+            font-size: 16.1em;
+            opacity: 0.4;
         }
 
         &.alt {
@@ -479,7 +473,8 @@
                     }
                 }
 
-                input::placeholder, .select>span {
+                input::placeholder,
+                .select>span {
                     opacity: .65;
                 }
 
@@ -624,7 +619,7 @@
                         margin-left: 2em;
                         text-align: center;
                         height: 100%;
-                        
+
                         &.validationError {
                             border-color: red;
                         }
@@ -645,7 +640,7 @@
                         }
                     }
                 }
-                
+
                 a {
                     border: 1px solid var(--colorBorder);
                     border-radius: 0.6em;
@@ -658,16 +653,30 @@
     }
 
     @include media($screen) {
-       .imgCover {
+        .imgCover {
             font-size: 1em;
-       } 
+        }
     }
+
     @include media($laptop) {
-        
+        .subtitle, .title {
+            text-align: center;
+        }
+        >section {
+            flex-direction: column-reverse !important;
+            button, a.button {
+                margin: auto;
+            }
+        }
+        .teachers .item {
+            flex-direction: column;
+        }
     }
+
     @include media($tablet) {
         background-color: red;
     }
+
     @include media($mobile) {
         background-color: green;
     }

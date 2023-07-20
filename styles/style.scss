@@ -65,6 +65,7 @@
 
     .subtitle {
         font-size: 1.5em;
+        line-height: 1.7em;
         font-weight: 800;
         @extend %innerSpan;
 
@@ -99,6 +100,8 @@
     .imgCover {
         --radius: 0.9em;
         --bigRadius: 11.7em;
+        height: max-content;
+        margin: auto;
         font-size: 1.6em;
         background-color: var(--colorMain);
         position: relative;
@@ -254,7 +257,7 @@
     }
 
     .commonQ {
-        padding: 4.7em 4em;
+        padding: 4.7em 4%;
         font-size: 1.3em;
 
         .Q,
@@ -403,7 +406,7 @@
 
 
         background-color: var(--colorMain);
-        padding: 3em 7em;
+        padding: 3em 7%;
         font-size: 1.3em;
 
         .subtitle {
@@ -430,7 +433,7 @@
         >main {
             background-color: white;
             border-radius: 1em;
-            padding: 4em 8em;
+            padding: 4em 9%;
 
             >span {
                 font-size: 1.2em;
@@ -652,5 +655,20 @@
                 }
             }
         }
+    }
+
+    @include media($screen) {
+       .imgCover {
+            font-size: 1em;
+       } 
+    }
+    @include media($laptop) {
+        background-color: green;
+    }
+    @include media($tablet) {
+        background-color: red;
+    }
+    @include media($mobile) {
+        background-color: green;
     }
 }

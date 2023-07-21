@@ -17,13 +17,13 @@ $(function () {
             e.preventDefault();
             //check if form info is correct
             validateSection(cooperationForm)
-            .then(() => {
-                alert('اطلاعات شما با موفقیت ثبت شد!');
-                clearForm();
-            })
-            .catch(() => {
-                alert('لطفا اطلاعات خود را بصورت کامل وارد کنید');
-            })
+                .then(() => {
+                    alert('اطلاعات شما با موفقیت ثبت شد!');
+                    clearForm();
+                })
+                .catch(() => {
+                    alert('لطفا اطلاعات خود را بصورت کامل وارد کنید');
+                })
         }
     }
 
@@ -64,4 +64,17 @@ $(function () {
             }
         })
     }
+
+    //input type file
+    let fileInput = dc.queries('input[type="file"]');
+    fileInput.forEach(i => {
+        let label = i.nextElementSibling;
+        if (!label || !label.classList.contains('fileLabel')) return
+
+        i.onchange = e => {
+            let value = e.target.value;
+            value = value.split('\\').at(-1);
+            label.innerText = value;
+        }
+    })
 })

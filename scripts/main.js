@@ -18,11 +18,11 @@ $(function () {
             //check if form info is correct
             validateSection(cooperationForm)
                 .then(() => {
-                    alert('اطلاعات شما با موفقیت ثبت شد!');
+                    callModal.success('اطلاعات شما با موفقیت ثبت شد!');
                     clearForm();
                 })
                 .catch(() => {
-                    alert('لطفا اطلاعات خود را بصورت کامل وارد کنید');
+                    callModal.fail('لطفا اطلاعات خود را بصورت کامل وارد کنید');
                 })
         }
     }

@@ -35,7 +35,6 @@ function checkValidation(element) {
             .toLowerCase()
             .match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     }
-    ;
     function runValidation(vali, value) {
         switch (vali) {
             case 'notEmpty':
@@ -82,11 +81,18 @@ function checkValidation(element) {
             case 'checkbox':
                 let isError = true;
                 let group = element.dataset.groupwith;
-                dc.queries(`input[type="checkbox"][data-groupwith="${group}"]`).forEach(item=>{
-                    if (item.checked)
-                    isError = false;
+                let checkboxes = dc.queries(`input[type="checkbox"][data-groupwith="${group}"]`);
+                checkboxes.forEach(item=>{
+                    if (item.checked) {
+                        isError = false;
+                    }
                 });
                 errorCheck(isError, 'لطفا یک مورد را انتخاب کنید', vali);
+                if (!isError) {
+                    checkboxes.forEach(ch => {
+                        ch.nextElementSibling.classList.remove('show');
+                    })
+                }
                 break;
         }
     }

@@ -1,2 +1,2 @@
 - imgCover width set to change with window
-
+- do not use alert

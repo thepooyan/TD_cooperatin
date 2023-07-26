@@ -249,9 +249,12 @@
         }
 
         &.alt {
-            background-color: var(--backgroundAlt);
             flex-direction: row-reverse;
             width: 100%;
+        }
+
+        &.background_dim {
+            background-color: var(--backgroundAlt);
         }
     }
 

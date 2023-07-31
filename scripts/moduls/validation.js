@@ -8,6 +8,7 @@ function checkValidation(element) {
         NEQ: 1,
         length: 2,
         noSpace: 3,
+        usePersian: 4,
     };
 
     let validation = JSON.parse(element.dataset.validate);
@@ -82,7 +83,7 @@ function checkValidation(element) {
                 let isError = true;
                 let group = element.dataset.groupwith;
                 let checkboxes = dc.queries(`input[type="checkbox"][data-groupwith="${group}"]`);
-                checkboxes.forEach(item=>{
+                checkboxes.forEach(item => {
                     if (item.checked) {
                         isError = false;
                     }
@@ -93,6 +94,10 @@ function checkValidation(element) {
                         ch.nextElementSibling.classList.remove('show');
                     })
                 }
+                break;
+            case 'usePersian':
+                let persianChar = new RegExp("[\u0600-\u06FF]");
+                errorCheck(!persianChar.test(value), 'لطفا از کیبرد فارسی استفاده کنید', vali);
                 break;
         }
     }

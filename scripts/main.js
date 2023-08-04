@@ -39,7 +39,7 @@ $(function () {
         item.checked = false;
     })
 
-    const teacherCarousel = dc.query('body > .teachers.owl-carousel');
+    const teacherCarousel = dc.query('#cooperation > .teachers.owl-carousel');
     if (teacherCarousel) {
         $(teacherCarousel).owlCarousel({
             autoWidth: false,
